@@ -23,21 +23,19 @@ class FormController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'subject' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'dob' => 'required|date',
+            'gender' => 'required',
+            'education' => 'required',
+            'skills' => 'required|array',
+            'skin_color' => 'required',
             'message' => 'required|min:10',
         ]);
-
-        // $contact = new Contacts();
-        // $contact->name = $request->input('name');
-        // $contact->email = $request->input('email');
-        // $contact->subject = $request->input('subject');
-        // $contact->message = $request->input('message');
-        // $contact->save();
+        
+        $validatedData['skills'] = implode(', ', $request->input('skills'));
 
         Contact::create($validatedData);
-
-        dd($validatedData, 'Onaylanmıştır');
         
-        return redirect()->back()->with('success', 'Form başarıyla gönderildi!');
+        return redirect()->back()->with('success', 'Başvurunuz başarıyla alındı!');
     }
 }
