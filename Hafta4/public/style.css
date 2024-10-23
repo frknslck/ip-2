@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(128, 128, 128, 0.479);
+}
+
+.nav-bar{
+    padding-top: 10px;
+    /* width: 100%; */
+    /* height: 50px; */
+    text-align: center;
+    font-size: x-large;
+    border-bottom: 2px double blue;
+}
+
+.nav-link-wrap{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: red;
+}   
+
+.nav-link{
+    text-decoration: none;
+    color: rgb(124, 1, 124);
+    font-size: 25px;
+}
+
+.nav-link:hover{
+    color: red;
+    font-size: 27px;
+}
+
+.section-s{
+    padding-top: 15px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+
+.footer-bar{
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+    border-top: 2px double blue;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
