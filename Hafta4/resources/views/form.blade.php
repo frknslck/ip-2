@@ -48,7 +48,7 @@
             <label for="gender" class="form-label">Cinsiyet:</label><br>
             <input type="radio" id="male" name="gender" value="Erkek" {{ old('gender') == 'Erkek' ? 'checked' : '' }}> Erkek<br>
             <input type="radio" id="female" name="gender" value="Kadın" {{ old('gender') == 'Kadın' ? 'checked' : '' }}> Kadın<br>
-            <input type="radio" id="other" name="gender" value="Diğer" {{ old('gender') == 'Diğer' ? 'checked' : '' }}> Diğer<br>
+            <input type="radio" id="other" name="gender" value="Atak Heli" {{ old('gender') == 'Diğer' ? 'checked' : '' }}> Diğer<br>
         </div>
 
         <div class="mb-3">

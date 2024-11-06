@@ -16,12 +16,14 @@
         <li class="nav-link-wrap">
             <a class="nav-link" style="text-decoration: none;" href="/">Ana Sayfa</a>
             <a class="nav-link" style="text-decoration: none;" href="/about">Hakkımızda</a>
-            <a class="nav-link" style="text-decoration: none;" href="/contact">İletişim</a>
-            <a class="nav-link" style="text-decoration: none;" href="/form">Form</a>
+            <!-- <a class="nav-link" style="text-decoration: none;" href="/contact">İletişim</a> -->
+            <a class="nav-link" style="text-decoration: none;" href="/form">İletişim</a>
+            <a class="nav-link" style="text-decoration: none;" href="/messages">Mesajlar</a>
         </li>
     </nav>
     <section class="section-s">
         @yield('main')
+        <div class="mb-3"></div>
     </section>
     <footer class="footer-bar">
         <h1>
