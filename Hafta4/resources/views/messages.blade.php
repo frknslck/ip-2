@@ -3,19 +3,31 @@
 @section('main')
     @if(isset($selectedMessage))
         <div class="container w-50 mx-auto mt-5">
-            <h3>Mesaj Detayları</h3>
-            <table class="table table-bordered">
-                <tr><th>ID</th><td>{{ $selectedMessage->id }}</td></tr>
-                <tr><th>İsim</th><td>{{ $selectedMessage->name }}</td></tr>
-                <tr><th>E-mail</th><td>{{ $selectedMessage->email }}</td></tr>
-                <tr><th>Oluşturulma Tarihi</th><td>{{ $selectedMessage->created_at }}</td></tr>
-                <tr><th>Mesaj</th><td>{{ $selectedMessage->message }}</td></tr>
-                <tr><th>Eğitim</th><td>{{ $selectedMessage->education }}</td></tr>
-            </table>
-            <a href="/messages" class="btn btn-primary">Geri</a>
+            <h3>Mesaj Görüntüleme</h3>
+            <form action="{{ route('messages.update', $selectedMessage->id) }}" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="name" class="form-label">İsim</label>
+                    <input type="text" name="name" class="form-control" value="{{ $selectedMessage->name }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" name="email" class="form-control" value="{{ $selectedMessage->email }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="education" class="form-label">Eğitim</label>
+                    <input type="text" name="education" class="form-control" value="{{ $selectedMessage->education }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesaj</label>
+                    <textarea name="message" class="form-control" rows="4" required>{{ $selectedMessage->message }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Güncelle</button>
+                <a href="/messages" class="btn btn-secondary">Geri</a>
+            </form>
         </div>
     @else
-        <table class="table table-striped w-75 mx-auto">
+        <table class="table table-striped mx-auto">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -35,14 +47,13 @@
                         <td class="text-danger">{{ $message->created_at }}</td>
                         <td class="text-success">{{ $message->education }}</td>
                         <td>
-                        <a class="btn btn-primary" onclick="window.location.href='{{ route('messages.read', $message->id) }}'">Oku</a>
-
-                        <a class="btn btn-danger" href="/messages/{{$message -> id}}/delete">Sil</a>
-                        <a class="btn btn-danger" href="/messages/{{$message -> id}}/delete">Sil</a>
+                            <a class="btn btn-primary" onclick="window.location.href='{{ route('messages.read', $message->id) }}'">Oku & Düzenle</a>
+                            <a class="btn btn-danger" href="/messages/{{$message->id}}/delete">Sil</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <div class="">{{$messages->links()}}</div>
     @endif
 @endsection

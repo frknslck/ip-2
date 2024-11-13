@@ -15,5 +15,7 @@ Route::post('/form', [FormController::class, 'store']);
 Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
 Route::get('/messages/{id}/read', [MessageController::class, 'read'])->name('messages.read');
 Route::get('/messages/{id}/delete', [MessageController::class, 'delete'])->name('messages.delete');
+Route::post('/messages/{id}/update', [MessageController::class, 'update'])->name('messages.update');
+
 
 

@@ -53,3 +53,9 @@ body{
     padding: 10px;
     border-top: 2px double blue;
 }
+
+.mad{
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 100px !important;
+}
