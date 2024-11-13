@@ -11,7 +11,7 @@
 <body class="container">
     <nav class="nav-bar">
         <h1>
-            NAVBAR
+            <h1>Flying Pickles Juggling Pianos in the Underwater Desert of Nachos</h1>
         </h1>
         <li class="nav-link-wrap">
             <a class="nav-link" style="text-decoration: none;" href="/">Ana Sayfa</a>
@@ -26,9 +26,7 @@
         <div class="mb-3"></div>
     </section>
     <footer class="footer-bar">
-        <h1>
-            FOOTER
-        </h1>
+        <h5>© 2024 by Furkan Selçuk. All Rights Reserved.</h5>
     </footer>
 </body>
 </html>
