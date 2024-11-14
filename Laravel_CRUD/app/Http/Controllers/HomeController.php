@@ -16,8 +16,4 @@ class HomeController extends Controller
     {
         return view('hakkimizda');
     }
-    public function form()
-    {
-        return view('form');
-    }
 }
