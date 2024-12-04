@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
 {
@@ -32,6 +33,6 @@ class NewsController extends Controller
         $news->read_count = $news->read_count + 1;
         $news->save();
 
-        return view('news.get', compact('categories', 'news'));
+        return view(view: 'news.get', data: compact('categories', 'news'));
     }
 }
