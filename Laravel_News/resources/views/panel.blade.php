@@ -269,14 +269,26 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-block mt-3">Güncelle</button>
+                    @if (Auth::user()->of != 0)
+                        <button type="submit" class="btn btn-success btn-block mt-3">Güncelle</button>
+                    @else
+                        <button type="submit" class="btn btn-secondary btn-block mt-3" disabled>Güncelleme Yetkiniz Yok</button>
+                    @endif
                 </form>
-
-                <form method="POST" action="{{ route('panel.news.destroy', $news->id) }}" class="mt-3">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-block">Sil</button>
-                </form>
+                
+                @if (Auth::user()->of != 0)
+                    <form method="POST" action="{{ route('panel.news.destroy', $news->id) }}" class="mt-3">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-block">Sil</button>
+                    </form>
+                @else
+                    <form method="POST" action="{{ route('panel.news.destroy', $news->id) }}" class="mt-3">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-secondary btn-block" disabled>Silme Yetkiniz Yok</button>
+                    </form>
+                @endif
             @endif
         </div>
     </div>
