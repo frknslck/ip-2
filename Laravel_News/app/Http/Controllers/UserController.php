@@ -26,7 +26,7 @@ class UserController extends Controller
         $news = News::find($newsId);
 
         if (!$news) {
-            return redirect()->route('panel.index')->with('error', 'Haber bulunamadı!');
+            return back()->with('error', 'Haber bulunamadı!');
         }
 
         $users = User::all();
@@ -40,12 +40,12 @@ class UserController extends Controller
         $news = News::find($id);
 
         if (!$news) {
-            return redirect()->route('panel.index')->with('error', 'Haber bulunamadı!');
+            return back()->with('error', 'Haber bulunamadı!');
         }
 
-        $news->update($request->only(['title', 'description', 'image', 'content', 'is_active']));
+        $news->update($request->only(['title', 'description', 'category_id', 'image', 'content', 'is_active']));
 
-        return redirect()->route('panel.index')->with('success', 'Haber başarıyla güncellendi!');
+        return back()->with('success', 'Haber başarıyla güncellendi!');
     }
 
     public function deleteNews($id)
@@ -53,12 +53,12 @@ class UserController extends Controller
         $news = News::find($id);
 
         if (!$news) {
-            return redirect()->route('panel.index')->with('error', 'Haber bulunamadı!');
+            return back()->with('error', 'Haber bulunamadı!');
         }
 
         $news->delete();
 
-        return redirect()->route('panel.index')->with('success', 'Haber başarıyla silindi!');
+        return back()->with('success', 'Haber başarıyla silindi!');
     }
 
     // KULLANICILAR

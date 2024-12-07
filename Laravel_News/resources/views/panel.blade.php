@@ -235,13 +235,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="image_url">Görsel URL</label>
+                        <label for="image">Görsel URL</label>
                         <input 
                             type="url" 
-                            name="image_url" 
-                            id="image_url" 
+                            name="image" 
+                            id="image" 
                             class="form-control" 
-                            value="{{ old('image_url', $news->image ?? '') }}" 
+                            value="{{ old('image', $news->image ?? '') }}" 
                             placeholder="Görsel URL'sini girin">
                         
                         @if (!empty($news->image))

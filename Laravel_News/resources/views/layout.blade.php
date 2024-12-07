@@ -163,7 +163,7 @@
             </div>
             
             <div class="col-4 text-center">
-                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="/">ÇTBMYO Haber</a>
+                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="/">Kedy Haber</a>
             </div>     
 
             <div class="col-4 d-flex justify-content-end align-items-center">
